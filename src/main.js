@@ -50,7 +50,7 @@ function renderImages(event) {
                     progressBarColor: '#B51B1B',
                 });
             }
-            gallery.innerHTML = '';
+            
             gallery.innerHTML = images.hits.reduce(
                 (
                     acc,
