@@ -35,7 +35,6 @@ function renderImages(event) {
             if (!response.ok) {
                 throw new Error('Your request is not ok!');
             }
-            loader.classList.add('hide');
             return response.json();
         })
         .then(images => {
@@ -87,6 +86,9 @@ function renderImages(event) {
             lightbox.refresh();
         })
         .catch(error => console.log(error))
-        .finally(() => form.reset());
+        .finally(() => {
+            loader.classList.add('hide');
+            form.reset();
+        });
 }
 
