@@ -30,7 +30,6 @@ function renderImages(event) {
 
     loader.classList.remove('hide');
 
-    //////////// to be continued...
     fetch(url)
         .then(response => {
             if (!response.ok) {
