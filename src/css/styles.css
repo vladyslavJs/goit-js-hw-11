@@ -146,6 +146,7 @@ button[type='submit']:focus {
 }
 
 .gallery-item {
+  width: calc((100% - 72px) / 4);
   padding: 8px;
   border: 1px solid #D3D3D3;
   border-radius: 5px;
