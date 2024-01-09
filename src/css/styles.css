@@ -1,9 +1,3 @@
-/**
-  |============================
-  | include css partials with
-  | default @import url()
-  |============================
-*/
 @import url('./reset.css');
 
 :root {
@@ -31,7 +25,7 @@
 }
 
 input[name='search'] {
-  width: 272px;
+  width: 252px;
   height: 40px;
   padding: 8px 16px;
   border-radius: 4px;
@@ -82,10 +76,13 @@ button[type='submit']:focus {
 .loader {
   width: 48px;
   height: 48px;
+  top: 50%;
+  left: 50%;
   border-radius: 50%;
-  display: block;
-  margin: 15px auto;
+  display: inline-block;
   position: relative;
+  border: 3px solid;
+  border-color: #FFF #FFF transparent transparent;
   box-sizing: border-box;
   animation: rotation 1s linear infinite;
 }
@@ -96,19 +93,25 @@ button[type='submit']:focus {
   box-sizing: border-box;
   position: absolute;
   left: 0;
+  right: 0;
   top: 0;
-  background: #9494dc;
-  width: 16px;
-  height: 16px;
-  transform: translate(-50%, 50%);
+  bottom: 0;
+  margin: auto;
+  border: 3px solid;
+  border-color: transparent transparent #4e75ff #4e75ff;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
+  box-sizing: border-box;
+  animation: rotationBack 0.5s linear infinite;
+  transform-origin: center center;
 }
 
 .loader::before {
-  left: auto;
-  right: 0;
-  background: #cf1010;
-  transform: translate(50%, 100%);
+  width: 32px;
+  height: 32px;
+  border-color: #FFF #FFF transparent transparent;
+  animation: rotation 1.5s linear infinite;
 }
 
 @keyframes rotation {
@@ -121,6 +124,15 @@ button[type='submit']:focus {
   }
 }
 
+@keyframes rotationBack {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(-360deg);
+  }
+}
 
 .gallery {
   display: flex;
@@ -170,3 +182,5 @@ span {
   line-height: 1.5;
   letter-spacing: 0.04em;
 }
+
+
