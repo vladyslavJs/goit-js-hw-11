@@ -1,4 +1,13 @@
 /* Reset styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: auto;
+  padding: auto;
+}
+
 h1,
 h2,
 h3,
@@ -31,5 +40,7 @@ button {
 img {
   display: block;
   max-width: 100%;
-  height: auto;
+  object-fit: cover;
 }
+
+
